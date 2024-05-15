@@ -9,3 +9,5 @@ final borderClr = HexColor('#E1E1E1');
 final lightGreyClr = HexColor('#DFDFDF');
 final lightWhiteClr = HexColor('#FCFCFC');
 final lightBlackClr = HexColor('#F1F1F1');
+final heatherBerryClr = HexColor('#E35783');
+final goldenGrassClr = HexColor('#DCA52B');

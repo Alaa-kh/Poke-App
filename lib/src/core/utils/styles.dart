@@ -12,6 +12,9 @@ abstract class Styles {
   static const titleLarge = TextStyle(
       fontSize: 48, fontFamily: 'SofiaSans', fontWeight: FontWeight.w600);
 
+  static const textStyleNavigationBar =
+      TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: blackClr);
+
   static final textStyleUnderLine = TextStyle(
     decoration: TextDecoration.underline,
     fontWeight: FontWeight.w500,
