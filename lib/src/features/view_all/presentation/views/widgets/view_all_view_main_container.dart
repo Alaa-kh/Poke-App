@@ -1,0 +1,44 @@
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:lottie/lottie.dart';
+import 'package:poke/src/core/constants/packages.dart';
+import 'package:poke/src/core/utils/animation_assets.dart';
+
+class ViewAllViewMainContainer extends StatelessWidget {
+  const ViewAllViewMainContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ViewAllCubit, ViewAllState>(
+        builder: (BuildContext context, ViewAllState state) => Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: state is ViewAllLoading
+                ? Lottie.asset(
+                    AnimationsAssets.loadingAnimation,
+                    width: 100.w,
+                    height: 100.h,
+                    alignment: Alignment.center,
+                  )
+                : Column(children: [
+                    const CustomVerticalSizedBox(40),
+                    context.read<ViewAllCubit>().searchList.isEmpty &&
+                            context
+                                .read<ViewAllCubit>()
+                                .searchController
+                                .text
+                                .isEmpty
+                        ? const ViewAllViewDetailsItems()
+                        : Container(
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        ImagesAssets.backgroundImage),
+                                    fit: BoxFit.fill)),
+                            child: const ViewAllViewSearchItems()
+                                .animate()
+                                .scale(delay: 800.ms)),
+                    const CustomVerticalSizedBox(30)
+                  ])));
+  }
+}
