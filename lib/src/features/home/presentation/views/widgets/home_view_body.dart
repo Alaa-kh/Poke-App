@@ -15,7 +15,10 @@ class HomeViewBody extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   alignment: WrapAlignment.center,
                   runAlignment: WrapAlignment.spaceEvenly,
-                  children: [HomeViewMainSection(), HomeViewTextField()])))
+                  children: [
+                    HomeViewMainSection(),
+                    HomeViewTextField()
+                  ])))
     ]);
   }
 }

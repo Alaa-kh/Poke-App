@@ -5,7 +5,7 @@ class ViewAllViewNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(ImagesAssets.backgroundImage),

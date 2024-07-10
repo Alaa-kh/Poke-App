@@ -60,8 +60,10 @@ class ViewAllCubit extends Cubit<ViewAllState> {
 
   int selected = 0;
 
-  void selectedBar(int index) {
+  void selectedBar(int index , List<DetailsModel> array) {
     selected = index;
+    emit(ViewAllInitial());
+    emit(ViewAllNavigation(index: index, detailsModel: array));
   }
 
   void add() {

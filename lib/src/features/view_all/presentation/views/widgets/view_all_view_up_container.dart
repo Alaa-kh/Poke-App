@@ -25,7 +25,7 @@ class ViewAllViewUpContainer extends StatelessWidget {
                   TextSpan(
                       text: 'book',
                       style: Styles.titleMedium.copyWith(color: babyBlueClr))
-                ]))
+                ])).animate().slideX(duration: 1000.ms).shimmer(delay: 500.ms),
           ]),
           const ViewAllViewThemeContainer()
         ]));

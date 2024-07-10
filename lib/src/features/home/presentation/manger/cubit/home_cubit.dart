@@ -63,5 +63,6 @@ class HomeCubit extends Cubit<HomeState> {
 
   void selected(int index) {
     select = index;
+    emit(HomeInitial());
   }
 }

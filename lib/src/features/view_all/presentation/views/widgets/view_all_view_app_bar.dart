@@ -19,8 +19,10 @@ AppBar viewAllViewAppBar(BuildContext context) {
         const ViewAllViewUpContainer(),
         const CustomVerticalSizedBox(15),
         ViewAllViewTextField(
-            controller: context.read<ViewAllCubit>().searchController,
-            onChanged: (name) =>
-                context.read<ViewAllCubit>().addSearchToList(name))
+                controller: context.read<ViewAllCubit>().searchController,
+                onChanged: (name) =>
+                    context.read<ViewAllCubit>().addSearchToList(name))
+            .animate()
+            .slideY(duration: 1000.ms)
       ]));
 }

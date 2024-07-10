@@ -3,14 +3,12 @@ import 'package:poke/src/core/constants/packages.dart';
 class DetailsViewAboutTable extends StatelessWidget {
   const DetailsViewAboutTable({
     Key? key,
-    required this.index,
+    required this.detailsModel,
   }) : super(key: key);
-  final int index;
+  final DetailsModel detailsModel;
   @override
   Widget build(BuildContext context) {
-    final detailsPokemonItems =
-        context.read<ViewAllCubit>().detailsPokemonItems;
-    return Padding(
+   return Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.w),
         child: Container(
             decoration: BoxDecoration(color: lynxWhiteClr, boxShadow: [
@@ -34,13 +32,13 @@ class DetailsViewAboutTable extends StatelessWidget {
                   Table(children: [
                     TableRow(children: [
                       const Text("Height", textAlign: TextAlign.center),
-                      Text('${detailsPokemonItems[index].height.toString()}m',
+                      Text('${detailsModel.height.toString()}m',
                           style: Styles.titleText15,
                           textAlign: TextAlign.center)
                     ]),
                     TableRow(children: [
                       const Text('Weight', textAlign: TextAlign.center),
-                      Text('${detailsPokemonItems[index].weight.toString()}Kg',
+                      Text('${detailsModel.weight.toString()}Kg',
                           style: Styles.titleText15,
                           textAlign: TextAlign.center)
                     ]),
@@ -51,19 +49,19 @@ class DetailsViewAboutTable extends StatelessWidget {
                               textAlign: TextAlign.center)),
                       Padding(
                           padding: EdgeInsets.only(top: 10.h),
-                          child: detailsPokemonItems[index].abilities.length ==
+                          child: detailsModel.abilities.length ==
                                   2
                               ? Text(
-                                  '• ${detailsPokemonItems[index].abilities[0].ability.name}\n• ${detailsPokemonItems[index].abilities[1].ability.name}',
+                                  '• ${detailsModel.abilities[0].ability.name}\n• ${detailsModel.abilities[1].ability.name}',
                                   style: Styles.titleText15,
                                   textAlign: TextAlign.center)
-                              : detailsPokemonItems[index].abilities.length == 3
+                              : detailsModel.abilities.length == 3
                                   ? Text(
-                                      '• ${detailsPokemonItems[index].abilities[0].ability.name}\n• ${detailsPokemonItems[index].abilities[1].ability.name}\n• ${detailsPokemonItems[index].abilities[2].ability.name}',
+                                      '• ${detailsModel.abilities[0].ability.name}\n• ${detailsModel.abilities[1].ability.name}\n• ${detailsModel.abilities[2].ability.name}',
                                       style: Styles.titleText15,
                                       textAlign: TextAlign.center)
                                   : Text(
-                                      '• ${detailsPokemonItems[index].abilities[0].ability.name}',
+                                      '• ${detailsModel.abilities[0].ability.name}',
                                       style: Styles.titleText15,
                                       textAlign: TextAlign.center))
                     ])

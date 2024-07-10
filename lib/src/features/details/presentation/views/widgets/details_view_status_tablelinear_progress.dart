@@ -13,8 +13,10 @@ class DetailsViewStatusTableLinearProgress extends StatelessWidget {
         height: 10.h,
         decoration: BoxDecoration(color: borderClr),
         child: FractionallySizedBox(
-            alignment: Alignment.centerLeft,
-            widthFactor: value,
-            child: Container(decoration: BoxDecoration(color: babyBlueClr))));
+                alignment: Alignment.centerLeft,
+                widthFactor: value,
+                child: Container(decoration: BoxDecoration(color: babyBlueClr)))
+            .animate()
+            .slideX(delay: 1000.ms));
   }
 }

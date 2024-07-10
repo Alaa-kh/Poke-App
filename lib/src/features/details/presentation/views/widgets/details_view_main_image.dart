@@ -1,4 +1,3 @@
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:poke/src/core/constants/packages.dart';
 
 class DetailsViewMainImage extends StatelessWidget {
@@ -11,8 +10,10 @@ class DetailsViewMainImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-        bottom: -90.h,
+        bottom: -100.h,
         width: 255.w,
-        child: SvgPicture.network(image).animate().shimmer(delay: 1000.ms));
+        child: SvgPicture.network(image)
+            .animate()
+            .shimmer(delay: 1000.ms, duration: 1000.ms));
   }
 }

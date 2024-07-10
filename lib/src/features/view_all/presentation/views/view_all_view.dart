@@ -3,9 +3,7 @@ import 'package:poke/src/core/constants/packages.dart';
 class ViewAllView extends StatelessWidget {
   const ViewAllView({
     Key? key,
-    this.toggleTheme,
   }) : super(key: key);
-  final VoidCallback? toggleTheme;
 
   @override
   Widget build(BuildContext context) {

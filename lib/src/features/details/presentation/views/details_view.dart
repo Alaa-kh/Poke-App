@@ -5,10 +5,10 @@ class DetailsView extends StatelessWidget {
   const DetailsView({
     Key? key,
     required this.index,
-    required this.detailsPokemonItems,
+    required this.detailsPokemonItem,
   }) : super(key: key);
   final int index;
-  final List<DetailsModel> detailsPokemonItems;
+  final DetailsModel detailsPokemonItem;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class DetailsView extends StatelessWidget {
             child: BlocBuilder<ViewAllCubit, ViewAllState>(
                 builder: (context, state) => Scaffold(
                     body: DetailsViewBody(
-                        index: index, detailsPokemonItems: detailsPokemonItems),
+                     detailsPokemonItem: detailsPokemonItem),
                     bottomNavigationBar:
                         const DetailsViewBottomBarContainer()))));
   }

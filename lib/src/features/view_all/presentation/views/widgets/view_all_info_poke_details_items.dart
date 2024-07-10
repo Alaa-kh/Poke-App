@@ -29,7 +29,8 @@ class ViewAllViewInfoPokeDetailsItems extends StatelessWidget {
                   width: 120.w,
                   text: detailsPokemonItems[index].types[0].type.name,
                   emoji: detailsPokemonItems[index].types[0].type.name)
-          : const CircularProgressIndicator();
+          : Lottie.asset(AnimationsAssets.loadingAnimation,
+              width: 50.w, height: 50.h);
     });
   }
 }

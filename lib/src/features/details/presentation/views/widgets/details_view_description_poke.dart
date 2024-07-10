@@ -23,6 +23,6 @@ class DetailsViewDescriptionPoke extends StatelessWidget {
           ViewAllViewEmojiName(name: emoji),
           Text(text,
               style: Styles.titleMedium.copyWith(fontWeight: FontWeight.w400))
-        ]));
+        ])).animate().rotate(delay: 1000.ms, duration: 1000.ms);
   }
 }

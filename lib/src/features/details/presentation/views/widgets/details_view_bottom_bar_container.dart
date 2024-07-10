@@ -24,15 +24,12 @@ class DetailsViewBottomBarContainer extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) =>
                         BlocBuilder<ViewAllCubit, ViewAllState>(
-                            builder: (BuildContext context, ViewAllState state) => GestureDetector(
-                                onTap: () => context
-                                    .read<ViewAllCubit>()
-                                    .selectedBar(index),
-                                child: Container(
-                                    alignment: Alignment.center,
-                                    width: 124.w,
-                                    decoration: BoxDecoration(color: context.read<ViewAllCubit>().selected == index ? whiteClr : bottomBarClr, borderRadius: BorderRadius.circular(60)),
-                                    child: Text(labelBottomBar[index], style: Styles.titleText15)))),
+                            builder: (BuildContext context, ViewAllState state) =>
+                                GestureDetector(
+                                    onTap: () => context.read<ViewAllCubit>().selectedBar(
+                                        index,
+                                        context.read<ViewAllCubit>().detailsPokemonItems),
+                                    child: Container(alignment: Alignment.center, width: 124.w, decoration: BoxDecoration(color: context.read<ViewAllCubit>().selected == index ? whiteClr : bottomBarClr, borderRadius: BorderRadius.circular(60)), child: Text(labelBottomBar[index], style: Styles.titleText15)))),
                     separatorBuilder: (BuildContext context, int index) => const CustomHorizontalSizedBox(50),
                     itemCount: labelBottomBar.length))));
   }

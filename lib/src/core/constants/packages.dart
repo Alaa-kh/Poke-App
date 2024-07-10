@@ -60,6 +60,9 @@ export 'dart:convert';
 export 'package:dio/dio.dart';
 export 'package:poke/src/core/constants/app_api.dart';
 export 'package:poke/src/core/network/crud.dart';
-
+export 'package:flutter/services.dart';
 export 'package:poke/src/features/home/data/repo/home_repo.dart';
-
+export 'package:flutter_animate/flutter_animate.dart';
+export 'package:lottie/lottie.dart';
+export 'package:poke/src/core/constants/packages.dart';
+export 'package:poke/src/core/utils/animation_assets.dart';

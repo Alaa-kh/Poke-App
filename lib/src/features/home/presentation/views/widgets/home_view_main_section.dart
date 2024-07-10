@@ -8,7 +8,7 @@ class HomeViewMainSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Image.asset(ImagesAssets.homeImage),
+      Image.asset(ImagesAssets.homeImage).animate().shader(),
       RichText(
           text: TextSpan(
               text: 'Poké',
@@ -18,12 +18,11 @@ class HomeViewMainSection extends StatelessWidget {
                 text: 'book',
                 style: Styles.titleLarge
                     .copyWith(fontWeight: FontWeight.bold, color: babyBlueClr))
-          ])),
+          ])).animate().shimmer(),
       const Text(
-        'Largest Pokémon index with information about every Pokemon you can think of. ',
-        style: Styles.titleSmall,
-        textAlign: TextAlign.center,
-      ),
+          'Largest Pokémon index with information about every Pokemon you can think of. ',
+          style: Styles.titleSmall,
+          textAlign: TextAlign.center),
       const CustomVerticalSizedBox(20)
     ]);
   }

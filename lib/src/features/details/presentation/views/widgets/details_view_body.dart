@@ -1,14 +1,13 @@
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:poke/src/core/constants/packages.dart';
 
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({
     Key? key,
     this.index,
-    required this.detailsPokemonItems,
+    required this.detailsPokemonItem,
   }) : super(key: key);
   final int? index;
-  final List<DetailsModel> detailsPokemonItems;
+  final DetailsModel detailsPokemonItem;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ViewAllCubit, ViewAllState>(
@@ -16,38 +15,38 @@ class DetailsViewBody extends StatelessWidget {
             SingleChildScrollView(
                 child: Column(children: [
               DetailsViewSectionUp(
-                  image: detailsPokemonItems[index!]
-                      .sprites
-                      .other!
-                      .dreamWorld
-                      .frontDefault),
+                  image: detailsPokemonItem
+                      .sprites.other!.dreamWorld.frontDefault),
               const CustomVerticalSizedBox(90),
-              DetailsViewNamePoke(name: detailsPokemonItems[index!].name)
+              DetailsViewNamePoke(name: detailsPokemonItem.name)
                   .animate()
                   .shimmer(delay: 1000.ms),
-              detailsPokemonItems[index!].types.length > 1
+              detailsPokemonItem.types.length > 1
                   ? Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       DetailsViewDescriptionPoke(
-                          text: detailsPokemonItems[index!].types[0].type.name,
-                          emoji:
-                              detailsPokemonItems[index!].types[0].type.name),
+                          text: detailsPokemonItem.types[0].type.name,
+                          emoji: detailsPokemonItem.types[0].type.name),
                       const CustomHorizontalSizedBox(10),
                       DetailsViewDescriptionPoke(
-                          text: detailsPokemonItems[index!].types[1].type.name,
-                          emoji:
-                              detailsPokemonItems[index!].types[1].type.name),
+                          text: detailsPokemonItem.types[1].type.name,
+                          emoji: detailsPokemonItem.types[1].type.name),
                     ])
                   : DetailsViewDescriptionPoke(
                       width: 120.w,
-                      text: detailsPokemonItems[index!].types[0].type.name,
-                      emoji: detailsPokemonItems[index!].types[0].type.name),
+                      text: detailsPokemonItem.types[0].type.name,
+                      emoji: detailsPokemonItem.types[0].type.name),
               const CustomVerticalSizedBox(40),
-              IndexedStack(
-                  index: context.read<ViewAllCubit>().selected,
-                  children: [
-                    DetailsViewAboutTable(index: index!),
-                    DetailsViewStatusTable(index: index!)
-                  ])
+              BlocBuilder<ViewAllCubit, ViewAllState>(
+                  builder: (BuildContext context, ViewAllState state) =>
+                      IndexedStack(
+                          index: context.read<ViewAllCubit>().selected,
+                          children: [
+                            DetailsViewAboutTable(
+                              detailsModel: detailsPokemonItem,
+                            ),
+                            DetailsViewStatusTable(
+                                detailsPokemonItem: detailsPokemonItem)
+                          ]))
             ])));
   }
 }

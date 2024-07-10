@@ -3,13 +3,11 @@ import 'package:poke/src/core/constants/packages.dart';
 class DetailsViewStatusTable extends StatelessWidget {
   const DetailsViewStatusTable({
     Key? key,
-    required this.index,
+    required this.detailsPokemonItem,
   }) : super(key: key);
-  final int index;
+  final DetailsModel detailsPokemonItem;
   @override
   Widget build(BuildContext context) {
-    final detailsPokemonItems =
-        context.read<ViewAllCubit>().detailsPokemonItems;
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 18.w),
         child: Container(
@@ -39,36 +37,28 @@ class DetailsViewStatusTable extends StatelessWidget {
                           children: [
                             TableRow(children: [
                               Text(
-                                detailsPokemonItems[index].stats[0].stat.name,
+                                detailsPokemonItem.stats[0].stat.name,
                               ),
                               DetailsViewStatusTableLinearProgress(
-                                  value: detailsPokemonItems[index]
-                                          .stats[0]
-                                          .baseStat
+                                  value: detailsPokemonItem.stats[0].baseStat
                                           .toDouble() /
                                       100),
                               Text(
-                                  detailsPokemonItems[index]
-                                      .stats[0]
-                                      .baseStat
+                                  detailsPokemonItem.stats[0].baseStat
                                       .toString(),
                                   style: Styles.titleMedium,
                                   textAlign: TextAlign.end)
                             ]),
                             TableRow(children: [
                               Text(
-                                detailsPokemonItems[index].stats[1].stat.name,
+                                detailsPokemonItem.stats[1].stat.name,
                               ),
                               DetailsViewStatusTableLinearProgress(
-                                  value: detailsPokemonItems[index]
-                                          .stats[1]
-                                          .baseStat
+                                  value: detailsPokemonItem.stats[1].baseStat
                                           .toDouble() /
                                       100),
                               Text(
-                                  detailsPokemonItems[index]
-                                      .stats[1]
-                                      .baseStat
+                                  detailsPokemonItem.stats[1].baseStat
                                       .toString(),
                                   style: Styles.titleMedium,
                                   textAlign: TextAlign.end)
@@ -77,19 +67,15 @@ class DetailsViewStatusTable extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: 10.h),
                                 child: Text(
-                                  detailsPokemonItems[index].stats[2].stat.name,
+                                  detailsPokemonItem.stats[2].stat.name,
                                 ),
                               ),
                               DetailsViewStatusTableLinearProgress(
-                                  value: detailsPokemonItems[index]
-                                          .stats[2]
-                                          .baseStat
+                                  value: detailsPokemonItem.stats[2].baseStat
                                           .toDouble() /
                                       100),
                               Text(
-                                  detailsPokemonItems[index]
-                                      .stats[2]
-                                      .baseStat
+                                  detailsPokemonItem.stats[2].baseStat
                                       .toString(),
                                   style: Styles.titleMedium,
                                   textAlign: TextAlign.end)
@@ -98,19 +84,15 @@ class DetailsViewStatusTable extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: 10.h),
                                 child: Text(
-                                  detailsPokemonItems[index].stats[3].stat.name,
+                                  detailsPokemonItem.stats[3].stat.name,
                                 ),
                               ),
                               DetailsViewStatusTableLinearProgress(
-                                  value: detailsPokemonItems[index]
-                                          .stats[3]
-                                          .baseStat
+                                  value: detailsPokemonItem.stats[3].baseStat
                                           .toDouble() /
                                       100),
                               Text(
-                                  detailsPokemonItems[index]
-                                      .stats[3]
-                                      .baseStat
+                                  detailsPokemonItem.stats[3].baseStat
                                       .toString(),
                                   style: Styles.titleMedium,
                                   textAlign: TextAlign.end)
@@ -119,19 +101,15 @@ class DetailsViewStatusTable extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: 10.h),
                                 child: Text(
-                                  detailsPokemonItems[index].stats[4].stat.name,
+                                  detailsPokemonItem.stats[4].stat.name,
                                 ),
                               ),
                               DetailsViewStatusTableLinearProgress(
-                                  value: detailsPokemonItems[index]
-                                          .stats[4]
-                                          .baseStat
+                                  value: detailsPokemonItem.stats[4].baseStat
                                           .toDouble() /
                                       100),
                               Text(
-                                  detailsPokemonItems[index]
-                                      .stats[4]
-                                      .baseStat
+                                  detailsPokemonItem.stats[4].baseStat
                                       .toString(),
                                   style: Styles.titleMedium,
                                   textAlign: TextAlign.end)
@@ -140,21 +118,14 @@ class DetailsViewStatusTable extends StatelessWidget {
                               Padding(
                                   padding: EdgeInsets.only(top: 10.h),
                                   child: Text(
-                                    detailsPokemonItems[index]
-                                        .stats[5]
-                                        .stat
-                                        .name,
+                                    detailsPokemonItem.stats[5].stat.name,
                                   )),
                               DetailsViewStatusTableLinearProgress(
-                                  value: detailsPokemonItems[index]
-                                          .stats[5]
-                                          .baseStat
+                                  value: detailsPokemonItem.stats[5].baseStat
                                           .toDouble() /
                                       100),
                               Text(
-                                  detailsPokemonItems[index]
-                                      .stats[5]
-                                      .baseStat
+                                  detailsPokemonItem.stats[5].baseStat
                                       .toString(),
                                   textAlign: TextAlign.end,
                                   style: Styles.titleMedium)
